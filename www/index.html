@@ -34,15 +34,6 @@
                     }, {});
                 }, true);
             }, true);
-            window.onload = function () {
-                document.querySelector("#getLocation").addEventListener("click", function () {
-                    navigator.geolocation.getCurrentPosition(function (d) {
-                        document.querySelector("#lat").innerHTML = d.coords.latitude;
-                        document.querySelector("#lng").innerHTML = d.coords.longitude;
-                    }, function () {
-                    }, {});
-                }, true);
-            }
         </script>
     </body>
 </html>
