@@ -1,7 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-</head>
-<body>
-</body>
+    <head>
+        <style type="text/css">
+            html, body
+            {
+                width: 100%;
+                height: 100%;
+            }
+            .app
+            {
+                width: 350px;
+                height: 500px;
+                margin: auto auto;
+                background: rgba(0, 148, 255, 0.50);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <span>Latitude:</span><span id="lat"></span>
+            <span>Longitude:</span><span id="lng"></span>
+            <input type="button" id="getLocation" value="Get GPS Location"/>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", function () {
+                console.log("Device Ready...");
+                document.querySelector("#getLocation").addEventListener("click", function () {
+                    navigator.geolocation.getCurrentPosition(function (d) {
+                        document.querySelector("#lat").innerHTML = d.coords.latitude;
+                        document.querySelector("#lng").innerHTML = d.coords.longitude;
+                    }, function () {
+                    }, {});
+                }, true);
+            }, true);
+            window.onload = function () {
+                document.querySelector("#getLocation").addEventListener("click", function () {
+                    navigator.geolocation.getCurrentPosition(function (d) {
+                        document.querySelector("#lat").innerHTML = d.coords.latitude;
+                        document.querySelector("#lng").innerHTML = d.coords.longitude;
+                    }, function () {
+                    }, {});
+                }, true);
+            }
+        </script>
+    </body>
 </html>

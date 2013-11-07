@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <widget xmlns = "http://www.w3.org/ns/widgets"
+      xmlns:gap = "http://phonegap.com/ns/1.0"
+      id        = "teknar.tur"
+      version   = "1.0.0">
+
+  <name>Geolocation</name>
+
+  <description>GPS Data</description>
+
+  <author href="http://www.teknarteknoloji.com" email="cacheoff@gmail.com">Ali AKAY</author>
+  
+  <gap:platform name="ios" />
+  <gap:platform name="android" />
+
+  <preference name="orientation" value="portrait" />
+  <preference name="target-device" value="handset" />
+  <preference name="fullscreen" value="true" />
+  <preference name="phonegap-version" value="3.1.0" />
+    
+  <feature name="Geolocation">
+    <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+    <param name="ios-package" value="CDVLocation" />
+  </feature>
+  <access origin="*" /> 
+</widget>
